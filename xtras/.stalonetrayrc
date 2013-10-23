@@ -1,0 +1,7 @@
+skip_taskbar
+icon_size 16
+icon_gravity SE
+max_geometry 12x1
+geometry 12x1+1728+3
+background black
+window_strut top

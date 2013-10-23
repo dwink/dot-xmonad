@@ -1,0 +1,16 @@
+Config  { font = "xft:Ubuntu-9"
+        , bgColor = "black"
+        , fgColor = "grey"
+        , position = TopW L 90
+        , lowerOnStart = True
+        , commands =    [ Run Memory ["-t","Mem: <usedratio>%"] 10
+						, Run Weather "KDPA" ["-t"," <tempF>F <rh>% ","-L","64","-H","77","--normal","green","--high","red","--low","lightblue"] 36000
+						, Run Network "eth0" [] 10
+                        , Run Cpu ["-t", "CPU: <total> (<user>/<system>)"] 10
+                        , Run Date "%m/%d/%Y %I:%M %p" "dt" 60 
+                        , Run StdinReader
+                        ]
+        , sepChar = "%"
+        , alignSep = "}{"
+        , template = "%dt% %KDPA% | %StdinReader% }{ <fc=#888888>%eth0%</fc> %cpu% %memory%"
+        }
